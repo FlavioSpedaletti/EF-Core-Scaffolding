@@ -22,9 +22,9 @@ namespace teste.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            _context.Database.Migrate();
+            await _context.Database.MigrateAsync();
 
             return View();
         }
